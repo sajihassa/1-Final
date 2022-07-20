@@ -121,47 +121,42 @@
 
    <div class="box-container">
 
-      <div class="box" id="myBtn">
-         <img src="images/icon-1.png" alt="">
-         <h3>วิศวกรรมโยธา</h3>
-      </div>
-         <!-- The Modal -->
-         <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-               <span class="close">&times;</span>
-               <h2>วิศวกรรมโยธา</h2>
+                <div class="box" id="myBtn">
+                    <img src="images/icon-1.png" alt="">
+                    <h3>วิศวกรรมโยธา</h3>
+                </div>
+                
+                <div class="box">
+                    <img src="images/icon-2.png" alt="">
+                    <h3>วิศวกรรมไฟฟ้า</h3>
+                </div>
+
+                <div class="box">
+                    <img src="images/icon-3.png" alt="">
+                    <h3>ปิโตรเคมีและพอลิเมอร์</h3>
+                </div>
+               
+
             </div>
 
-      </div>
+            
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/icon-4.png" alt="">
+                    <h3>วิศวกรรมเครื่องกลและหุ่นยนต์</h3>
+                </div>
 
-      <div class="box">
-         <img src="images/icon-2.png" alt="">
-         <h3>วิศวกรรมไฟฟ้า</h3>
-      </div>
+                <div class="box">
+                    <img src="images/icon-5.png" alt="">
+                    <h3>วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์</h3>
+                </div>
 
-      <div class="box">
-         <img src="images/icon-3.png" alt="">
-         <h3>ปิโตรเคมีและพอลิเมอร์</h3>
-      </div>
-   </div>
-   <div class="box-container">
-      <div class="box">
-         <img src="images/icon-4.png" alt="">
-         <h3>วิศวกรรมเครื่องกลและหุ่นยนต์</h3>
-      </div>
+                <div class="box">
+                    <img src="images/icon-6.png" alt="">
+                    <h3>วิศวกรรมเคมีและเคมีเภสัชกรรม</h3>
+                </div>
 
-      <div class="box">
-         <img src="images/icon-5.png" alt="">
-         <h3>วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-6.png" alt="">
-         <h3>วิศวกรรมเคมีและเคมีเภสัชกรรม</h3>
-      </div>
-
-   </div>
+            </div>
 
 </section>
 
