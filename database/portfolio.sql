@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2022 at 07:31 AM
+-- Generation Time: Aug 25, 2022 at 05:56 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.15
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,6 +41,9 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`id`, `users_id`, `activity_type`, `activity_topic`, `activity_detail`, `activity_image`) VALUES
+(1, 1, 'กิจกรรมแรก', 'ประกวด', 'เป็นการประกวดและการแข่งขันทักษะความเป็นเลิศทางวิชาการ', 'ac.jpg'),
+(2, 2, 'อาสาสมัคร', 'กวาดวัด', 'กวาดวัดที่ ณ วัดสาริการาม', 'MT19-27-10-6002.png'),
+(3, 1, 'จิตอาสา', 'ทำความสะอาด', '-', 'Class Diagram!UML Property_6.png'),
 (5, 1, 'ไหว้', 'ไหว้ครู', 'ไหว้ครู', 'tec.jpg');
 
 -- --------------------------------------------------------
@@ -9961,8 +9964,10 @@ CREATE TABLE `educations` (
 --
 
 INSERT INTO `educations` (`id`, `users_id`, `study_class`, `type_study`, `grade`, `school`, `province`, `start_year`, `end_year`) VALUES
-(6, 1, 'มัธยมศึกษาตอนปลาย', 'วิทย์-คณิต', '3.00', 'ปัตตานี', 'ปัตตานี', 2552, 2558),
-(7, 1, 'มัธยมศึกษาตอนต้น', 'วิทย์-คณิต', '0.00', 'akdshg', 'asdfg', 0, 0);
+(2, 2, 'ประถมศึกษา', '-', '3.58', 'วฒ.', 'ตรัง', 2547, 2550),
+(3, 2, 'มัธยมศึกษาตอนต้น', 'วิทย์-คณิต', '3.55', 'สภ.2', 'ตรัง', 2551, 2554),
+(4, 1, 'มัธยมศึกษาตอนต้น', 'วิทย์-คณิต', '3.50', 'สภ.2', 'ตรัง', 2553, 2557),
+(6, 1, 'มัธยมศึกษาตอนปลาย', 'วิทย์-คณิต', '3.00', 'ปัตตานี', 'ปัตตานี', 2558, 2561);
 
 -- --------------------------------------------------------
 
@@ -10001,8 +10006,8 @@ CREATE TABLE `families` (
 --
 
 INSERT INTO `families` (`id`, `users_id`, `father_firstname`, `father_surname`, `father_carrier`, `father_earning`, `father_phone`, `mother_firstname`, `mother_surname`, `mother_carrier`, `mother_earning`, `mother_phone`, `parent_firstname`, `parent_surname`, `parent_carrier`, `parent_earning`, `parent_phone`, `relationship`, `parent_home_no`, `parent_tambol`, `parent_amphur`, `parent_province`, `parent_zipcode`) VALUES
-(1, 1, 'A', 'BC', 'เสียชีวิต', 0, '1235451213', 'b', 'cat', 'รับจ้าง', 12000, '9874563511', 'b', 'cat', 'รับจ้าง', 12000, '5635616165', 'มารดา', '17-19', '960102', '985', '76', 96000),
-(2, 10, 'สายฟ้า', 'ว่ายังไง', 'ค้าขาย', 10000, '0558794165', 'สายฝน', 'ว่ายังไง', 'ค้าขาย', 100000, '0874457789', 'สายฝน', 'ว่ายังไง', 'ค้าขาย', 100000, '0874457789', 'มารดา', '17', '530101', '616', '41', 53000);
+(1, 1, 'ดาวิน', 'เอ', 'รับจ้าง', 15000, '1236547890', 'มารี', 'แอน', 'รับจ้าง', 12000, '9874563210', 'มารี', 'แอน', 'รับจ้าง', 12000, '9874563210', 'มารดา', '12 บ้านเลขที่', '801501', '850', '63', 80210),
+(2, 2, 'ทอม', 'บี', 'รับจ้าง', 20000, '0987654321', 'ริน', 'รัก', 'ค้าขาย', 20000, '1234567890', 'ริน', 'รัก', 'ค้าขาย', 20000, '1234567890', 'มารดา', '47/1', '920110', '943', '72', 92000);
 
 -- --------------------------------------------------------
 
@@ -10042,6 +10047,29 @@ CREATE TABLE `login_facebook` (
   `LINK` varchar(250) NOT NULL,
   `CREATE_DATE` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio`
+--
+
+CREATE TABLE `portfolio` (
+  `id` int(11) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `portfolio_id` int(11) NOT NULL,
+  `portfolio_name` varchar(45) NOT NULL,
+  `portfolio_count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio`
+--
+
+INSERT INTO `portfolio` (`id`, `users_id`, `portfolio_id`, `portfolio_name`, `portfolio_count`) VALUES
+(1, 1, 1, 'p1', 1),
+(2, 4, 1, 'p1', 1),
+(3, 1, 2, 'p2', 1);
 
 -- --------------------------------------------------------
 
@@ -10209,19 +10237,21 @@ INSERT INTO `students` (`id`, `users_id`, `firstname`, `surname`, `nickname`, `i
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(45) NOT NULL,
-  `surname` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL
+  `password` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `userlevel` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `surname`, `username`, `password`) VALUES
-(1, 'Good', 'Morning', 'user123', '1234'),
-(10, 'รัตนา', 'ว่ายังไง', 'asd', '123');
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `phone`, `userlevel`) VALUES
+(0, 'admin', 'admin', 'admin@gmail.com', '1234567890', 'a'),
+(1, 'user', 'user', 'user@gmail.com', '0987654321', 'u'),
+(4, 'user1', 'user1', 'user1@gmail.com', '0123456789', 'u');
 
 -- --------------------------------------------------------
 
@@ -10302,6 +10332,12 @@ ALTER TABLE `login_facebook`
   ADD UNIQUE KEY `ID` (`FACEBOOK_ID`);
 
 --
+-- Indexes for table `portfolio`
+--
+ALTER TABLE `portfolio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
@@ -10357,7 +10393,7 @@ ALTER TABLE `amphures`
 -- AUTO_INCREMENT for table `educations`
 --
 ALTER TABLE `educations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `families`
@@ -10370,12 +10406,6 @@ ALTER TABLE `families`
 --
 ALTER TABLE `geographies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `login_facebook`
---
-ALTER TABLE `login_facebook`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `provinces`
@@ -10393,19 +10423,7 @@ ALTER TABLE `skills`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `users_facebook`
---
-ALTER TABLE `users_facebook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users_gmail`
---
-ALTER TABLE `users_gmail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
