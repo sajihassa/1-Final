@@ -149,6 +149,36 @@ $currentStudent = getCurrentStudentByUserId($_SESSION["id"]);
                 </div>
               </div>
 
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <p class="mb-4 text-sm">เบอร์โทรศัพท์นักเรียน : </p>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <p class="mb-4 text-sm"><?php echo $currentStudent["phone_student"];?></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <p class="mb-4 text-sm">อีเมลนักเรียน : </p>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <p class="mb-4 text-sm"><?php echo $currentStudent["email_student"];?></p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
               <div class="clearfix"></div>
 
             </div>

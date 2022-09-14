@@ -71,15 +71,15 @@ if($_GET["id"] == ""){
                     </div>
                   </div>
 
-                </div>
-                <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">เกรดเฉลี่ย</label>
                       <input type="text" class="form-control" name="grade" value="<?php echo $currentEducation["grade"];?>" required>
                     </div>
                   </div>
+                </div>
 
+                <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">โรงเรียน</label>
@@ -87,7 +87,7 @@ if($_GET["id"] == ""){
                     </div>
                   </div>
 
-                  <div class="col-md 4">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">จังหวัด</label>
                       <input type="text" class="form-control" name="province" value="<?php echo $currentEducation["province"];?>" required>

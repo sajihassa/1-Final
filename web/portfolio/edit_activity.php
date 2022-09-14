@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
   }else{
     editActivity($_POST["id"],$_POST["users_id"],$_POST["activity_type"],$_POST["activity_topic"],$_POST["activity_detail"],$_FILES["activity_image"]["name"]);
   }
-  
+
 
 }
 if($_GET["id"] == ""){
@@ -47,15 +47,13 @@ if($_GET["id"] == ""){
               <div class="card-body">
 
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">ประเภทกิจกรรม</label>
                       <input type="text" class="form-control" name="activity_type" value="<?php echo $currentActivity["activity_type"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">หัวข้อผลงาน/กิจกรรม</label>
                       <input type="text" class="form-control" name="activity_topic" value="<?php echo $currentActivity["activity_topic"];?>" required>
@@ -63,22 +61,20 @@ if($_GET["id"] == ""){
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">คำอธิบายผลงาน</label>
                       <input type="text" class="form-control" name="activity_detail" value="<?php echo $currentActivity["activity_detail"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">รูปภาพกิจกรรม</label>
                       <input type="file" class="form-control" name="activity_image">
                     </div>
                   </div>
                 </div>
-                
+
 
                 <div align="center">
                   <input type="submit" name="submit" class="btn btn-success btn-round" value="บันทึก">
@@ -90,7 +86,7 @@ if($_GET["id"] == ""){
               </div>
             </div>
           </div>
-          
+
         </div>
       </form>
 
@@ -101,7 +97,7 @@ if($_GET["id"] == ""){
 
     </div>
   </main>
-  
+
 </body>
 
 </html>

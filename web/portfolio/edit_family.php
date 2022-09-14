@@ -33,42 +33,46 @@ if(isset($_POST["submit"])){
             <div class="card">
               <div class="card-header card-header-primary">
                 <h4 class="card-title">ข้อมูลครอบครัว</h4>
+                <p><span class="error">* ข้อมูลจำเป็นต้องกรอก </span></p>
               </div>
 
               <div class="card-body">
                 <legend>ข้อมูลบิดา</legend>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ชื่อบิดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="father_firstname" value="<?php echo $currentFamily["father_firstname"];?>" required>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">นามสกุลบิดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="father_surname" value="<?php echo $currentFamily["father_surname"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">อาชีพบิดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="father_carrier" value="<?php echo $currentFamily["father_carrier"];?>" required>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">รายได้บิดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="father_earning" value="<?php echo $currentFamily["father_earning"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">หมายเลขโทรศัพท์บิดา</label>
+                      <span class="error">*</span>
                       <input type="text" maxlength=10 minlength=10 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="father_phone" value="<?php echo $currentFamily["father_phone"];?>" required>
                     </div>
                   </div>
@@ -76,37 +80,40 @@ if(isset($_POST["submit"])){
                 <hr/>
                 <legend>ข้อมูลผู้มารดา</legend>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ชื่อมารดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="mother_firstname" value="<?php echo $currentFamily["mother_firstname"];?>" required>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">นามสกุลมารดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="mother_surname" value="<?php echo $currentFamily["mother_surname"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">อาชีพมารดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="mother_carrier" value="<?php echo $currentFamily["mother_carrier"];?>" required>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">รายได้มารดา</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="mother_earning" value="<?php echo $currentFamily["mother_earning"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">หมายเลขโทรศัพท์มารดา</label>
+                      <span class="error">*</span>
                       <input type="text"  maxlength=10 minlength=10 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="mother_phone" value="<?php echo $currentFamily["mother_phone"];?>" required>
                     </div>
                   </div>
@@ -114,45 +121,47 @@ if(isset($_POST["submit"])){
                 <hr/>
                 <legend>ข้อมูลผู้ปกครอง</legend>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ชื่อผู้ปกครอง</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_firstname" value="<?php echo $currentFamily["parent_firstname"];?>" required>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">นามสกุลผู้ปกครอง</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_surname" value="<?php echo $currentFamily["parent_surname"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">อาชีพผู้ปกครอง</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_carrier" value="<?php echo $currentFamily["parent_carrier"];?>" required>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">รายได้ผู้ปกครอง</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_earning" value="<?php echo $currentFamily["parent_earning"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">หมายเลขโทรศัพท์ผู้ปกครอง</label>
+                      <span class="error">*</span>
                       <input type="text"  maxlength=10 minlength=10 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="parent_phone" value="<?php echo $currentFamily["parent_phone"];?>" required>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ความสัมพันธ์</label>
+                      <span class="error">*</span>
                       <select name="relationship" class="form-control" required>
                         <option value="">-- โปรดระบุ --</option>
                         <option value="บิดา" <?php if($currentFamily['relationship'] == "บิดา"){ ?> selected<?php } ?>>บิดา</option>
@@ -167,6 +176,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="bmd-label-floating">บ้านเลขที่</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_home_no" value="<?php echo $currentFamily["parent_home_no"];?>" required>
                     </div>
                   </div>
@@ -175,6 +185,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">จังหวัด</label>
+                      <span class="error">*</span>
                       <select name="parent_province" class="form-control" id="province">
                         <option value="">-- โปรดเลือก --</option>
                         <?php foreach($allProvince as $dataProvince){ ?>
@@ -193,6 +204,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">อำเภอ</label>
+                      <span class="error">*</span>
                       <!--<input type="text" class="form-control" name="parent_amphur" value="<?php echo $currentFamily["parent_amphur"];?>" required>-->
                       <?php if($currentFamily["parent_amphur"] == "" || $currentFamily["parent_amphur"] == 0){ ?>
                         <select name="parent_amphur" class="form-control" id="amphures"></select>
@@ -217,6 +229,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">ตำบล</label>
+                      <span class="error">*</span>
                       <!--<input type="text" class="form-control" name="parent_tambol" value="<?php echo $currentFamily["parent_tambol"];?>" required>-->
                       <?php if($currentFamily["parent_tambol"] == "" || $currentFamily["parent_tambol"] == 0){ ?>
                         <select name="parent_tambol" class="form-control" id="districts"></select>
@@ -239,6 +252,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">รหัสไปรษณีย์</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="parent_zipcode" id="zip_code" value="<?php echo $currentFamily["parent_zipcode"];?>" required>
                     </div>
                   </div>

@@ -27,7 +27,7 @@ function checkLogin($username,$password){
 			</script>");
 
 	}else{
-		echo "<script type='text/javascript'>alert('ไม่สามารถเข้าสู่ระบบได้ ');</script>";
+		echo "<script type='text/javascript'>alert(' Username or Password ไม่ถูกต้อง ');</script>";
 	}
 
 	mysqli_close($con);
@@ -75,7 +75,7 @@ function saveRegister($firstname,$surname,$username,$password){
 
 	mysqli_close($con);
 	echo ("<script language='JavaScript'>
-		alert('ลงทะเบียนเรียบร้อย');
+		alert('ลงทะเบียนสำเร็จ');
 		window.location.href='index.php';
 		</script>");
 }
@@ -214,7 +214,7 @@ function saveActivity($users_id,$activity_type,$activity_topic,$activity_detail,
 
 	mysqli_close($con);
 	echo ("<script language='JavaScript'>
-		alert('เพิ่มข้อมูลเรียบร้อย');
+		alert('เพิ่มข้อมูลผลงาน / กิจกรรมสำเร็จ');
 		window.location.href='manage_activity.php';
 		</script>");
 }
@@ -239,7 +239,7 @@ function editActivity($id,$users_id,$activity_type,$activity_topic,$activity_det
 
 
 	echo ("<script language='JavaScript'>
-		alert('แก้ไขข้อมูลเรียบร้อยแล้ว');
+		alert('แก้ไขข้อมูลผลงาน / กิจกรรมสำเร็จ');
 		window.location.href='manage_activity.php';
 		</script>");
 
@@ -251,7 +251,7 @@ function deleteActivity($id){
 	mysqli_query($con,"DELETE FROM activities WHERE id='".$id."'");
 	mysqli_close($con);
 	echo ("<script language='JavaScript'>
-		alert('ลบข้อมูลเรียบร้อย');
+		alert('ลบข้อมูลผลงาน / กิจกรรมสำเร็จ');
 		window.location.href='manage_activity.php';
 		</script>");
 
@@ -308,7 +308,7 @@ function saveEducation($users_id,$study_class,$type_study,$grade,$school,$provin
 
 	mysqli_close($con);
 	echo ("<script language='JavaScript'>
-		alert('เพิ่มข้อมูลเรียบร้อย');
+		alert('เพิ่มข้อมูลประวัติการศึกษาสำเร็จ');
 		window.location.href='manage_education.php';
 		</script>");
 }
@@ -324,7 +324,7 @@ function editEducation($id,$users_id,$study_class,$type_study,$grade,$school,$pr
 
 
 	echo ("<script language='JavaScript'>
-		alert('แก้ไขข้อมูลเรียบร้อยแล้ว');
+		alert('แก้ไขข้อมูลประวัติการศึกษาสำเร็จ');
 		window.location.href='manage_education.php';
 		</script>");
 
@@ -336,7 +336,7 @@ function deleteEducation($id){
 	mysqli_query($con,"DELETE FROM educations WHERE id='".$id."'");
 	mysqli_close($con);
 	echo ("<script language='JavaScript'>
-		alert('ลบข้อมูลเรียบร้อย');
+		alert('ลบข้อมูลประวัติการศึกษาสำเร็จ');
 		window.location.href='manage_education.php';
 		</script>");
 
