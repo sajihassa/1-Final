@@ -20,7 +20,7 @@ $currentFamily = getCurrentFamilyByUserId($_SESSION["id"]);
     <div class="container-fluid py-4">
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-9">
           <div class="card mb-4">
             <div class="card-header pb-0">
             <a href="edit_family.php?id=<?php echo $data["id"];?>" class="btn btn-warning" style="float: right;margin-right: 25px;">แก้ไข</a>
@@ -30,7 +30,7 @@ $currentFamily = getCurrentFamilyByUserId($_SESSION["id"]);
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
 
-                <div class="col-md-12">
+                <div class="col-md-9">
                   <div class="card">
 
                     <div class="card-header pb-0">
@@ -44,7 +44,7 @@ $currentFamily = getCurrentFamilyByUserId($_SESSION["id"]);
                             <p class="mb-4 text-sm">ชื่อ-นามสกุล บิดา : </p>
                           </div>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-3">
                           <div class="form-group">
                             <p class="mb-4 text-sm"><?php echo $currentFamily["father_firstname"];?> <?php echo $currentFamily["father_surname"];?></p>
                           </div>

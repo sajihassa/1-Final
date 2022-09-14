@@ -21,6 +21,9 @@ require("function/function.php");
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -29,6 +32,122 @@ require("function/function.php");
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="datepicker/datetimepicker-master/jquery.datetimepicker.js"></script>
   <link href="datepicker/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<script>
+
+  var bFbStatus = false;
+  var fbID = "";
+  var fbName = "";
+  var fbEmail = "";
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '5057986240932697',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+function statusChangeCallback(response)
+{
+
+		if(bFbStatus == false)
+		{
+			fbID = response.authResponse.userID;
+
+			  if (response.status == 'connected') {
+				getCurrentUserInfo(response)
+			  } else {
+				FB.login(function(response) {
+				  if (response.authResponse){
+					getCurrentUserInfo(response)
+				  } else {
+					console.log('Auth cancelled.')
+				  }
+				}, { scope: 'email' });
+			  }
+		}
+
+
+		bFbStatus = true;
+}
+
+function getCurrentUserInfo() {
+  FB.api('/me?fields=name,email', function(userInfo) {
+
+	  fbName = userInfo.name;
+	  fbEmail = userInfo.email;
+
+	  alert(fbID);
+	  alert(fbName);
+	  alert(fbEmail);
+
+  });
+}
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+
+</script>
+
+
+  <script>
+  function autoTab(obj) {
+    var pattern = new String("_-____-_____-_-__"); // กำหนดรูปแบบ
+    var pattern_ex = new String("-"); // กำหนดสัญลักษณ์หรือเครื่องหมายที่ใช้แบ่ง
+    var returnText = new String("");
+    var obj_l = obj.value.length;
+    var obj_l2 = obj_l - 1;
+    for (i = 0; i < pattern.length; i++) {
+        if (obj_l2 == i && pattern.charAt(i + 1) == pattern_ex) {
+            returnText += obj.value + pattern_ex;
+            obj.value = returnText;
+        }
+    }
+    if (obj_l >= pattern.length) {
+        obj.value = obj.value.substr(0, pattern.length);
+    }
+}
+</script>
+
+<script>
+  function autoTabPhone(obj) {
+    var pattern = new String("___-___-____"); // กำหนดรูปแบบ
+    var pattern_ex = new String("-"); // กำหนดสัญลักษณ์หรือเครื่องหมายที่ใช้แบ่ง
+    var returnText = new String("");
+    var obj_l = obj.value.length;
+    var obj_9 = obj_l - 1;
+    for (i = 0; i < pattern.length; i++) {
+        if (obj_9 == i && pattern.charAt(i + 1) == pattern_ex) {
+            returnText += obj.value + pattern_ex;
+            obj.value = returnText;
+        }
+    }
+    if (obj_l >= pattern.length) {
+        obj.value = obj.value.substr(0, pattern.length);
+    }
+}
+</script>
 
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
@@ -213,4 +332,9 @@ require("function/function.php");
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
+
+<style>
+.error {color: #FF0000;}
+</style>
 </head>

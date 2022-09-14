@@ -44,7 +44,6 @@ if(isset($_POST["submit"])){
                   <h3 class="font-weight-bolder text-info text-gradient">Welcome</h3>
                 </div>
 
-
                 <div class="row px-xl-5 px-sm-4 px-3">
                 <div class="col-3 ms-auto px-1">
                   <a class="btn btn-outline-light w-100" href="javascript:;">
@@ -57,7 +56,14 @@ if(isset($_POST["submit"])){
                       </g>
                     </svg>
                   </a>
+                  <!-- <fb:login-button
+                    scope="public_profile,email"
+                    onlogin="checkLoginState();">
+                  </fb:login-button> -->
+
                 </div>
+
+
                 <div class="col-3 me-auto px-1">
                   <a class="btn btn-outline-light w-100" href="javascript:;">
                     <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

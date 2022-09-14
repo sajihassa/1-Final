@@ -28,7 +28,7 @@ if(isset($_POST["submit"])){
     <div class="container-fluid py-4">
 
 
-      <form name="prduct_detail_form" action="" method="post" enctype="multipart/form-data">
+      <form name="prduct_detail_form" action="" method="post" enctype="multipart/form-data" >
         <input type="hidden" class="form-control" name="users_id" value="<?php echo $_SESSION["id"];?>">
         <div class="row">
           <div class="col-md-12">
@@ -38,23 +38,27 @@ if(isset($_POST["submit"])){
               </div>
 
               <div class="card-body">
-                <legend>ข้อมูลส่วนตัว</legend>
+                <legend>ข้อมูลส่วนตัว </legend>
+                <p><span class="error">* ข้อมูลจำเป็นต้องกรอก </span></p>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ชื่อ</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="firstname" value="<?php echo $currentStudent["firstname"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">นามสกุล</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="surname" value="<?php echo $currentStudent["surname"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ชื่อเล่น</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="nickname" value="<?php echo $currentStudent["nickname"];?>" required>
                     </div>
                   </div>
@@ -66,18 +70,21 @@ if(isset($_POST["submit"])){
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">เลขบัตรประจำตัวประชาชน</label>
-                      <input type="text"  maxlength=13 minlength=13 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="id_card" value="<?php echo $currentStudent["id_card"];?>" required>
+                      <span class="error">*</span>
+                      <input type="text" placeholder="x-xxxxx-xxxxx-xx-x" minlength="17" maxlength="17" class="form-control" onkeyup="autoTab(this)"name="id_card" value="<?php echo $currentStudent["id_card"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">วันเกิด</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="birth_date" id="birth_date" value="<?php echo formatDateFull($currentStudent["birth_date"]);?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">เพศ</label>
+                      <span class="error">*</span>
                       <select name="sex" class="form-control" required>
                         <option value="ชาย" <?php if($currentStudent['sex'] == "ชาย"){ ?> selected<?php } ?>>ชาย</option>
                         <option value="หญิง" <?php if($currentStudent['sex'] == "หญิง"){ ?> selected<?php } ?>>หญิง</option>
@@ -92,18 +99,21 @@ if(isset($_POST["submit"])){
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">เชื้อชาติ</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="ethnicity" value="<?php echo $currentStudent["ethnicity"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">สัญชาติ</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="nationality" value="<?php echo $currentStudent["nationality"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label class="bmd-label-floating">ศาสนา</label>
+                      <span class="error">*</span>
                       <select name="religion" class="form-control" required>
                         <option value="พุทธ" <?php if($currentStudent['religion'] == "พุทธ"){ ?> selected<?php } ?>>พุทธ</option>
                         <option value="อิสลาม" <?php if($currentStudent['religion'] == "อิสลาม"){ ?> selected<?php } ?>>อิสลาม</option>
@@ -118,6 +128,7 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                       <label class="bmd-label-floating">น้ำหนัก</label>
                       <small id="passwordHelpInline" class="text-muted"> (กิโลกรัม)</small>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="weight" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="<?php echo $currentStudent["weight"];?>" required>
 
                     </div>
@@ -127,6 +138,7 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                       <label class="bmd-label-floating">ส่วนสูง</label>
                       <small id="passwordHelpInline" class="text-muted"> (เซนติเมตร) </small>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="height" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="<?php echo $currentStudent["height"];?>" required>
                       </div>
                   </div>
@@ -143,28 +155,31 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">อีเมลนักเรียน</label>
-                      <input type="text" class="form-control" name="email_student" value="<?php echo $currentStudent["email_student"];?>" required>
+                      <span class="error">*</span>
+                      <input type="email" class="form-control" name="email_student" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo $currentStudent["email_student"];?>" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">เบอร์โทรศัพท์นักเรียน</label>
+                      <span class="error">*</span>
+                      <input type="text" placeholder="xxx-xxx-xxxx" maxlength=12 minlength=12 onkeyup="autoTabPhone(this)" class="form-control" name="phone_student" value="<?php echo $currentStudent["phone_student"];?>" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">คติประจำใจ</label>
+                      <span class="error">*</span>
+                      <input type="text" class="form-control" name="motto" value="<?php echo $currentStudent["motto"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">เบอร์โทรศัพท์นักเรียน</label>
-                      <input type="text" maxlength=10 minlength=10 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="phone_student" value="<?php echo $currentStudent["phone_student"];?>" required>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">คติประจำใจ</label>
-                      <input type="text" class="form-control" name="motto" value="<?php echo $currentStudent["motto"];?>" required>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
                       <label class="bmd-label-floating">โรคประจำตัว</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="disease" value="<?php echo $currentStudent["disease"];?>" required>
                     </div>
                   </div>
@@ -173,12 +188,14 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">Fackbook</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="facebook" value="<?php echo $currentStudent["facebook"];?>" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">Line</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="line_id" value="<?php echo $currentStudent["line_id"];?>" required>
                     </div>
                   </div>
@@ -189,6 +206,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="bmd-label-floating">บ้านเลขที่</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="home_no" value="<?php echo $currentStudent["home_no"];?>" required>
                     </div>
                   </div>
@@ -197,6 +215,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">จังหวัด</label>
+                      <span class="error">*</span>
                       <select name="province" class="form-control" id="province">
                         <option value="">-- โปรดเลือก --</option>
                         <?php foreach($allProvince as $dataProvince){ ?>
@@ -214,6 +233,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">อำเภอ</label>
+                      <span class="error">*</span>
                       <?php if($currentStudent["amphur"] == "" || $currentStudent["amphur"] == 0){ ?>
                         <select name="amphur" class="form-control" id="amphures"></select>
                       <?php }else{ ?>
@@ -237,7 +257,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">ตำบล</label>
-
+                      <span class="error">*</span>
                       <?php if($currentStudent["tambol"] == "" || $currentStudent["tambol"] == 0){ ?>
                         <select name="tambol" class="form-control" id="districts"></select>
                       <?php }else{ ?>
@@ -259,6 +279,7 @@ if(isset($_POST["submit"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">รหัสไปรษณีย์</label>
+                      <span class="error">*</span>
                       <input type="text" class="form-control" name="zipcode" id="zip_code" value="<?php echo $currentStudent["zipcode"];?>" required>
                     </div>
                   </div>
