@@ -118,11 +118,43 @@
 
    <h1 class="heading-title"> portfolio of major </h1>
 
-   <div class="box-container">
+            <div class="box-container">
 
                 <div class="box" id="myBtn">
                     <img src="images/icon-1.png" alt="">
                     <h3>วิศวกรรมโยธา</h3>
+
+                    <!-- Modal -->
+                     <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                           <!-- Modal content-->
+                           <div class="modal-content">
+                           <div class="modal-header">
+                              <span type="button" class="close" >&times;</span>
+                              <!-- <h4 >วิศวกรรมโยธา</h4> -->
+                           </div>
+                           <div class="modal-body">
+                              <div class="box-container">
+                              <a href="images/portfolio/port1.php" style="text-align:center;" target="_blank">
+                              <img src="portfolio1/port1.png"  class="img-fluid" style="width: 200px;height: 300px;">                             
+                              <hr />
+                              </a>
+                              <a href="images/portfolio/port2.php" style="text-align:center;" target="_blank">
+                              <img src="portfolio1/port2.png"  class="img-fluid" style="width: 200px;height: 300px;">
+                              <hr />
+                              </a>
+                              <a href="images/portfolio/port3.php" style="text-align:center;" target="_blank">
+                              <img src="portfolio1/port3.png"  class="img-fluid" style="width: 200px;height: 300px;">
+                              <hr />
+                              </a>
+                              </div>
+                           </div>
+                           
+                           </div>
+                           
+                        </div>
+                     </div>
                 </div>
                 
                 <div class="box">

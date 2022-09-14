@@ -35,7 +35,7 @@ require_once("header.php");
                     <td align='center'><?php echo $alluser['username'] ?></td>
                     <td align='center'><?php echo $alluser['password'] ?></td>
                     <td align="center">
-                    <!-- <a href="user.php?submit=Edit&Select_ID=<?php echo $autoid;?>"  title='Edit' class='btn btn-warning btn-xs'>Edit</a>&nbsp;&nbsp; -->
+                    <a href="user.php?submit=Edit&Select_ID=<?php echo $autoid;?>"  title='Edit' class='btn btn-warning btn-xs'>Edit</a>&nbsp;&nbsp;
                     </td>
                     </tr>
                     </tbody>
