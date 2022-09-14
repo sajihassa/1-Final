@@ -72,8 +72,7 @@
       <a href="https://engineer.wu.ac.th/?page_id=15080" target="_blank">หลักสูตร</a>
       <a href="https://engineer.wu.ac.th/?page_id=6767" target="_blank">บุคลากร</a>
       <a href="book.php">ติดต่อ</a>
-      <a href="signin.php">Sign In</a>
-      <a href="signup.php">Sign Up</a>
+      <a href="portfolio/index.php">Sign In </a>
    </nav>
 
    <div id="menu-btn" class="fas fa-bars"></div>
