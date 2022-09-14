@@ -21,7 +21,7 @@ require_once("header.php");
                     <td align='center'><strong>ชื่อ </strong></td>
                     <td align='center'><strong>User name </strong></td>
                     <td align='center'><strong>User password </strong></td>
-                    <td width="8%"><a href="user.php?submit=Add&show=" class='btn btn-success btn-md' role='button'>Add New</a></td>
+                    <td width="5%"></td>
                     </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,6 @@ require_once("header.php");
                     <td align='center'><?php echo $alluser['password'] ?></td>
                     <td align="center">
                     <a href="user.php?submit=Edit&Select_ID=<?php echo $autoid;?>"  title='Edit' class='btn btn-warning btn-xs'>Edit</a>&nbsp;&nbsp;
-                    <a href="user.php?submit=DEL&show=OK&Select_ID=<?php echo $autoid;?>" title='Delete' class='confirm_delete btn btn-danger btn-xs' data-show="<?php echo $arr['auto_id'] ?>">Del</a>
                     </td>
                     </tr>
                     </tbody>
