@@ -184,7 +184,7 @@
 
                 <div class="box">
                     <img src="images/icon-6.png" alt="">
-                    <h3>วิศวกรรมs</h3>
+                    <h3>วิศวกรรมเคมีและเคมีเภสัชกรรม</h3>
                 </div>
 
             </div>
