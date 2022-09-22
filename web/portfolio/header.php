@@ -1,3 +1,5 @@
+<?php include('condb.php');?>
+
 <?php
 session_start();
 require("function/function.php");

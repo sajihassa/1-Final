@@ -1,24 +1,4 @@
 <?php
-	session_start();
-	if($_SESSION['id'] == "")
-	{
-		echo "Please Login!";
-		exit();
-	}
-
-	if($_SESSION['userlevel'] != "a")
-	{
-		echo "This page for Admin only!";
-		exit();
-	}	
-	
-	mysql_connect("localhost","root","");
-	mysql_select_db("portfolio");
-	$strSQL = "SELECT * FROM user WHERE id = '".$_SESSION['id']."' ";
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
-?>
-<?php
  
 $dataPoints = array( 
 	array("y" => 2, "label" => "p1" ),

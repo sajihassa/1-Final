@@ -21,7 +21,7 @@
             <h3 href="admin.php" class="w3-bar-item ">engineer portfoilo</h3>
             <a href="admin.php" class="w3-bar-item w3-button">หน้าแรก</a>
             <a href="personal.php" class="w3-bar-item w3-button">จัดการสมาชิก</a>
-            <a href="#" class="w3-bar-item w3-button">Profile</a>
-            <a href="#" class="w3-bar-item w3-button">ออกจากระบบ</a>
+            <a href="profile.php" class="w3-bar-item w3-button">Profile</a>
+            <a href="portfolio" class="w3-bar-item w3-button">ออกจากระบบ</a>
         </div>
     </div>

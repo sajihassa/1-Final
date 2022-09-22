@@ -1,8 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start();  
+include('condb.php');
+ 
+  $ID = $_SESSION['id'];
+  $name = $_SESSION['username'];
+  $level = $_SESSION['userlevel'];
+ 	if($level!='u'){
+    Header("Location: ../logout.php");  
+  }  
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <?php
-require_once("header.php");
+require_once("portfolio/header.php");
 ?>
 <?php
 $currentStudent = getCurrentStudentByUserId($_SESSION["id"]);
